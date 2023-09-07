@@ -6,6 +6,7 @@
       </view>
     </u-navbar>
     <SwiperList />
+    <SwitchMsg />
     <view class="footerBox">
       <FooterBox />
     </view>
@@ -14,9 +15,10 @@
 
 <script>
 import SwiperList from "../swiper-list/index.vue";
+import SwitchMsg from "../switch-msg/index.vue";
 import FooterBox from "./footer-box.vue";
 export default {
-  components: { SwiperList, FooterBox },
+  components: { SwiperList, SwitchMsg, FooterBox },
   data() {
     return {};
   },
