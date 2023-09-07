@@ -1,11 +1,11 @@
 <template>
   <view class="main">
-    <u-navbar title="楼盘详情">
+    <u-navbar title="uniapp">
       <view slot="left">
         <u-icon name="home" size="20"></u-icon>
       </view>
     </u-navbar>
-
+    <SwiperList />
     <view class="footerBox">
       <FooterBox />
     </view>
@@ -13,13 +13,12 @@
 </template>
 
 <script>
+import SwiperList from "../swiper-list/index.vue";
 import FooterBox from "./footer-box.vue";
 export default {
-  components: { FooterBox },
+  components: { SwiperList, FooterBox },
   data() {
-    return {
-      value6: 0,
-    };
+    return {};
   },
   methods: {},
 };
@@ -28,7 +27,6 @@ export default {
 <style lang="scss">
 .main {
   position: relative;
-
   .footerBox {
     position: fixed;
     bottom: 0;
