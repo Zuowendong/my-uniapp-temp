@@ -29,6 +29,7 @@ export default {
 <style lang="scss">
 .main {
   position: relative;
+  padding-bottom: 200px;
   .footerBox {
     position: fixed;
     bottom: 0;
@@ -36,6 +37,8 @@ export default {
     width: 100%;
     height: 170px;
     box-shadow: 0 0 2px 1px rgba(77, 77, 77, 0.2);
+    z-index: 1;
+    background: #fff;
   }
 }
 </style>

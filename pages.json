@@ -12,6 +12,12 @@
       "style": {
         "navigationBarTitleText": "楼盘相册"
       }
+    },
+    {
+      "path": "pages/switch-msg/info-detail",
+      "style": {
+        "navigationBarTitleText": "楼盘信息"
+      }
     }
   ],
   "globalStyle": {
