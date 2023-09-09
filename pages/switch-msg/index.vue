@@ -37,10 +37,12 @@ export default {
 <style lang="scss">
 .switchWrapper {
   background-color: #f6f6f8;
+  margin-bottom: 10px;
   .infoWrapper {
     margin-top: 10px;
     background-color: #fff;
     padding: 20px;
+    padding-bottom: 0;
   }
 }
 </style>

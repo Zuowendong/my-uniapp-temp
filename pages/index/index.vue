@@ -7,6 +7,7 @@
     </u-navbar>
     <SwiperList />
     <SwitchMsg />
+    <Analysis />
     <view class="footerBox">
       <FooterBox />
     </view>
@@ -16,9 +17,10 @@
 <script>
 import SwiperList from "../swiper-list/index.vue";
 import SwitchMsg from "../switch-msg/index.vue";
+import Analysis from "./analysis.vue";
 import FooterBox from "./footer-box.vue";
 export default {
-  components: { SwiperList, SwitchMsg, FooterBox },
+  components: { SwiperList, SwitchMsg, Analysis, FooterBox },
   data() {
     return {};
   },
@@ -30,6 +32,7 @@ export default {
 .main {
   position: relative;
   padding-bottom: 200px;
+  background-color: #f6f6f8;
   .footerBox {
     position: fixed;
     bottom: 0;
