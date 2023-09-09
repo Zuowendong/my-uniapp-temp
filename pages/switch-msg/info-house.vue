@@ -100,7 +100,7 @@ export default {
   methods: {
     handleViewDetails() {
       uni.$u.route("pages/switch-msg/info-detail", {
-        idx: 1,
+        tabIndex: 0,
       });
     },
   },

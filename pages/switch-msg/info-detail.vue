@@ -7,7 +7,7 @@
         @change="changeTab"
       ></u-tabs>
     </view>
-    <view class="details">
+    <view class="sticky-list-details">
       <view v-for="(item, index) in tabList" :key="index">
         <view :class="['detail-item', `detailItem${index}`]">
           <view class="title">{{ item.name }}</view>
@@ -124,13 +124,15 @@ export default {
       distanceArr: [],
     };
   },
+  onLoad(options) {
+    const { tabIndex } = options;
+    this.changeTab({ index: tabIndex });
+  },
   onShow() {
     this.getDistanceArr();
   },
-
   onPageScroll(event) {
     const { scrollTop } = event;
-    console.log("🔥🔥🔥🔥🔥🔥", scrollTop);
     if (scrollTop >= 80) {
       this.$nextTick(() => {
         const length = this.distanceArr.length;
@@ -144,7 +146,31 @@ export default {
 
   methods: {
     changeTab(tab) {
-      this.currentIndex = tab.index;
+      this.$nextTick(() => {
+        this.currentIndex = tab.index;
+
+        uni
+          .createSelectorQuery()
+          .select(`.detailItem${tab.index}`)
+          .boundingClientRect((data) => {
+            uni
+              .createSelectorQuery()
+              .select(".sticky-list-details")
+              .boundingClientRect((res) => {
+                const scrollTop = data.top - res.top; // 获取差值
+                const skewY = 50; // 偏移
+                // 页面开始进行滚动到目标位置
+                uni.pageScrollTo({
+                  // scrollTop的计算需要注意，在往上或者是往下拉的时候 需要加减 吸顶的高度
+                  scrollTop:
+                    scrollTop > 0 ? scrollTop - skewY : scrollTop + skewY,
+                  duration: 300,
+                });
+              })
+              .exec();
+          })
+          .exec();
+      });
     },
     getDistanceArr() {
       this.tabList.map((el, index) => {
@@ -170,7 +196,7 @@ export default {
     left: 0;
     background-color: #fff;
   }
-  .details {
+  .sticky-list-details {
     padding-top: 80px;
     padding-bottom: 1000px;
 

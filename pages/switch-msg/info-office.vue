@@ -46,7 +46,7 @@
           </view>
         </u-col>
       </u-row>
-      <view class="aloneBtn">查看楼盘完整信息</view>
+      <view class="aloneBtn" @click="handleViewDetails">查看楼盘完整信息</view>
     </view>
   </view>
 </template>
@@ -59,7 +59,13 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    handleViewDetails() {
+      uni.$u.route("pages/switch-msg/info-detail", {
+        tabIndex: 4,
+      });
+    },
+  },
 };
 </script>
 
