@@ -10,6 +10,7 @@
     <Analysis />
     <Album />
     <ActivityList />
+    <HouseType />
     <view class="footerBox">
       <FooterBox />
     </view>
@@ -22,6 +23,7 @@ import SwitchMsg from "../switch-msg/index.vue";
 import Analysis from "./analysis.vue";
 import Album from "../album/index.vue";
 import ActivityList from "../activity-list/index.vue";
+import HouseType from "../house-type/index.vue";
 import FooterBox from "./footer-box.vue";
 export default {
   components: {
@@ -30,6 +32,7 @@ export default {
     Analysis,
     Album,
     ActivityList,
+    HouseType,
     FooterBox,
   },
   data() {

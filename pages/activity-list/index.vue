@@ -1,10 +1,5 @@
 <template>
-  <view class="activity-main">
-    <view class="title">
-      楼盘动态
-      <text class="num">({{ stepsNum }}个)</text>
-    </view>
-
+  <WrapperBox title="楼盘动态" :subtitle="stepNumStr">
     <view class="stepsWrapper">
       <u-steps :current="currentStep" direction="column" dot>
         <u-steps-item
@@ -17,16 +12,17 @@
           </view>
         </u-steps-item>
       </u-steps>
-
       <view class="detialBtnBox">
         <view class="btn" @click="handleViewAll">全部动态</view>
       </view>
     </view>
-  </view>
+  </WrapperBox>
 </template>
 
 <script>
+import WrapperBox from "../../components/WrapperBox.vue";
 export default {
+  components: { WrapperBox },
   data() {
     return {
       stepsList: [
@@ -93,6 +89,9 @@ export default {
     stepsNum() {
       return this.stepsList ? this.stepsList.length : 0;
     },
+    stepNumStr() {
+      return `(${this.stepsNum}个)`;
+    },
     currentStep() {
       return this.stepsNum ? this.stepsNum - 1 : 0;
     },
@@ -114,65 +113,36 @@ export default {
 </script>
 
 <style lang="scss">
-.activity-main {
-  background-color: #fff;
-  padding: 20px;
-  .title {
-    height: 40px;
-    line-height: 40px;
-    font-size: 16px;
-    font-weight: 600;
-    position: relative;
-    padding-left: 10px;
-    margin-bottom: 10px;
-    &::before {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translatey(-50%);
-      content: "";
-      width: 2px;
-      height: 18px;
-      background-color: #4a6ddb;
-    }
-    .num {
-      font-size: 14px;
-      font-weight: normal;
-      color: #ccc;
-      padding-left: 4px;
-    }
+.stepsWrapper {
+  position: relative;
+  .stepItem {
+    min-height: 50px;
+    font-size: 13px;
+    box-sizing: border-box;
+    padding: 10px 0;
   }
-  .stepsWrapper {
-    position: relative;
-    .stepItem {
-      min-height: 50px;
-      font-size: 13px;
-      box-sizing: border-box;
-      padding: 10px 0;
-    }
-    .detialBtnBox {
+  .detialBtnBox {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding-top: 100px;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 1),
+      #fff
+    );
+    z-index: 1;
+    .btn {
       width: 100%;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      padding-top: 100px;
-      background: linear-gradient(
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.8),
-        rgba(255, 255, 255, 0.6),
-        rgba(255, 255, 255, 1),
-        #fff
-      );
-      z-index: 1;
-      .btn {
-        width: 100%;
-        height: 45px;
-        background-color: #ecf5ff;
-        color: #2b85e4;
-        border-radius: 8px;
-        line-height: 45px;
-        text-align: center;
-      }
+      height: 45px;
+      background-color: #ecf5ff;
+      color: #2b85e4;
+      border-radius: 8px;
+      line-height: 45px;
+      text-align: center;
     }
   }
 }
