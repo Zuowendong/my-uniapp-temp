@@ -18,6 +18,18 @@
       "style": {
         "navigationBarTitleText": "楼盘信息"
       }
+    },
+    {
+      "path": "pages/activity-list/list",
+      "style": {
+        "navigationBarTitleText": "楼盘动态"
+      }
+    },
+    {
+      "path": "pages/activity-list/detail",
+      "style": {
+        "navigationBarTitleText": "楼盘动态"
+      }
     }
   ],
   "globalStyle": {

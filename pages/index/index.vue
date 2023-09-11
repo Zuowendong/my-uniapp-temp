@@ -8,6 +8,8 @@
     <SwiperList />
     <SwitchMsg />
     <Analysis />
+    <Album />
+    <ActivityList />
     <view class="footerBox">
       <FooterBox />
     </view>
@@ -18,9 +20,18 @@
 import SwiperList from "../swiper-list/index.vue";
 import SwitchMsg from "../switch-msg/index.vue";
 import Analysis from "./analysis.vue";
+import Album from "../album/index.vue";
+import ActivityList from "../activity-list/index.vue";
 import FooterBox from "./footer-box.vue";
 export default {
-  components: { SwiperList, SwitchMsg, Analysis, FooterBox },
+  components: {
+    SwiperList,
+    SwitchMsg,
+    Analysis,
+    Album,
+    ActivityList,
+    FooterBox,
+  },
   data() {
     return {};
   },

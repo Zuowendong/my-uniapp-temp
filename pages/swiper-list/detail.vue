@@ -63,7 +63,7 @@ export default {
   },
   onLoad(options) {
     const { idx } = options;
-    this.imgList = this.tabList[idx].imgs;
+    this.imgList = this.tabList[idx || 0].imgs;
   },
   methods: {
     chooseTab(tab) {
