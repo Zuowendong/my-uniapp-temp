@@ -1,6 +1,6 @@
 <template>
   <view class="wrapper-main">
-    <view class="title">
+    <view v-if="title" class="title">
       {{ title }}
       <text class="subtitle">{{ subtitle }}</text>
     </view>

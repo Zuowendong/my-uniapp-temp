@@ -1,8 +1,8 @@
 <template>
   <view class="header">
     <view class="header-title">
-      <text>东岸观邸-云尚丹霞</text>
-      <text class="flag">在售</text>
+      <text class="title">东岸观邸-云尚丹霞</text>
+      <u-tag text="在售" size="mini"></u-tag>
     </view>
     <view class="header-subtitle">
       <u-icon name="map" color="#f29100" size="20"></u-icon>
@@ -29,12 +29,8 @@ export default {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
-    .flag {
-      margin-left: 10px;
-      font-size: 12px;
-      color: #fff;
-      background-color: #2b85e4;
-      padding: 0 4px;
+    .title {
+      margin-right: 10px;
     }
   }
   &-subtitle {

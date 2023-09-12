@@ -30,6 +30,12 @@
       "style": {
         "navigationBarTitleText": "楼盘动态"
       }
+    },
+    {
+      "path": "pages/house-type/detail",
+      "style": {
+        "navigationBarTitleText": "户型详情"
+      }
     }
   ],
   "globalStyle": {
