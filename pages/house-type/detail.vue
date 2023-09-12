@@ -46,18 +46,15 @@
         南北通透，标准飞机户型，功能齐全，三开间朝南，采光充足，二房面积一房的使用率拓宽功能;
       </text>
     </WrapperBox>
-    <WrapperBox title="其他住宅户型">
-      <text class="comment">
-        南北通透，标准飞机户型，功能齐全，三开间朝南，采光充足，二房面积一房的使用率拓宽功能;
-      </text>
-    </WrapperBox>
+    <OtherList />
   </view>
 </template>
 
 <script>
 import WrapperBox from "../../components/WrapperBox.vue";
+import OtherList from "./other-list.vue";
 export default {
-  components: { WrapperBox },
+  components: { WrapperBox, OtherList },
   data() {
     return {
       houseInfo: {
